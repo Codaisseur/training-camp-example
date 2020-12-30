@@ -1,6 +1,10 @@
-const collapsible = document.querySelector(".collapsible");
-const collapsibleContent = document.querySelector(".collapsible-content");
+const collapsibles = document.querySelectorAll(".collapsible");
 
-collapsible.addEventListener("click", function () {
-  collapsibleContent.classList.toggle("visible");
-});
+for (let i = 0; i < collapsibles.length; i++) {
+  const collapsible = collapsibles[i];
+
+  collapsible.addEventListener("click", function () {
+    const collapsibleContent = collapsible.nextElementSibling;
+    collapsibleContent.classList.toggle("visible");
+  });
+}
